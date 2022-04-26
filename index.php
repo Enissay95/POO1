@@ -6,7 +6,7 @@ require_once 'Bicycle.php';
 require_once 'Truck.php';
 
 
-
+/*
 
 $myCar = new Car('black', 5, 'diesel') ;
 
@@ -38,7 +38,7 @@ echo '<br> My Bike speed : ' . $myBike->getCurrentSpeed() . ' km/h' . '<br>';
 
 $myBike->dump();
 var_dump($myBike);
-
+*/
 // POO PART 2 :
 
 $bicycle = new Bicycle('blue', 1);
@@ -62,6 +62,36 @@ echo $truck->brake();
 echo $truck->getFilling();
 $truck->dump();
 
+
+// POO Part 04
+
+echo '<h1> car 04 </h1>';
+
+
+$car = new Car('gold', 4, 'diesel');
+
+
+ $car->setHasParkBrake(true);
+
+try {        
+    
+    // Code to try
+   echo  $car->start();
+
+} catch (Exception $e){
+    // code to manage exceptions
+
+    echo 'An error occured because the brake was still set <br>';
+    $car->setHasParkBrake(false);
+    echo 'Brake auto unset <br>';
+   // echo $car->start();
+
+} finally {       
+    // this code is always executed
+
+    echo 'My lambo car drives like never before';
+    
+}
 
 
 

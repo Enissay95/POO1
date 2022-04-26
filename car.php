@@ -4,6 +4,10 @@ require_once 'Vehicle.php';
 
 class Car extends Vehicle
 {
+
+    // attributs
+    private bool $hasParkBrake = true; // représentant l'état du frein à main
+
     private string $energy;
 
     private int $energyLevel;
@@ -43,4 +47,65 @@ class Car extends Vehicle
     {
         $this->energyLevel = $energyLevel;
     }
+
+
+
+
+
+
+
+    // POO Part 04
+
+
+    public function start(): string
+    {
+        $brake = $this->getHasParkBrake();
+
+   
+        if ($brake === true)
+        {
+            throw new Exception('le frein à main est actif');
+        }else{
+                 
+            $this->currentSpeed=15;
+            return 'engine started.<br>';
+
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+    /**
+     * Set the value of hasParkBrake
+     *
+     * @param bool $hasParkBrake
+     *
+     * @return void
+     */
+    public function setHasParkBrake(bool $hasParkBrake): void
+    {
+        $this->hasParkBrake = $hasParkBrake;
+
+    }
+
+
+    /**
+     * Get the value of hasParkBrake
+     *
+     * @return bool
+     */
+    public function getHasParkBrake(): bool
+    {
+        return $this->hasParkBrake;
+    }
+
+    
 }
