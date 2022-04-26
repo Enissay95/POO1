@@ -1,8 +1,9 @@
 <?php
 
 require_once 'Vehicle.php';
+require_once 'lightableInterface.php';
 
-class Car extends Vehicle
+class Car extends Vehicle implements lightableInterface
 {
 
     // attributs
@@ -107,5 +108,16 @@ class Car extends Vehicle
         return $this->hasParkBrake;
     }
 
+
+    // POO 05
+
+    public function switchOn(): bool
+    {
+        return  $this->switchOn(true);
+    }
+    public function switchOff(): bool
+    {
+        return  $this->switchOn(false);
+    }
     
 }
